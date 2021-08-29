@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">my airports</a>
+          <a class="nav-link" href="{{route('my-airports')}}">my airports</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{route('my-logbook')}}">my logbook</a>

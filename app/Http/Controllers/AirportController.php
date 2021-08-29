@@ -14,7 +14,9 @@ class AirportController extends Controller
      */
     public function index()
     {
-        //
+        $user = auth()->user();
+        $airports = $user->airport()->simplePaginate(10);
+        return view('pages.dashboard.airports.index', ['airports' => $airports]);
     }
 
     /**

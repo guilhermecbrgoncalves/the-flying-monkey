@@ -20,6 +20,15 @@
 
 }
 
+.airport-info hr {
+    margin-top: 0;
+}
+
+.airport-info p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 @media screen and (max-width: 850px) {
     .img-profile {
         width: 250px;

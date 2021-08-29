@@ -16,6 +16,9 @@ class CreateAirportsTable extends Migration
         Schema::create('airports', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('user_id')->constrained();
+            $table->integer('latitude');
+            $table->integer('longitude');
         });
     }
 
