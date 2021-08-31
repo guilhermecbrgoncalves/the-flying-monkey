@@ -3,7 +3,7 @@
     color: #736A5C;
 }
 
-.modal-dialog {
+.modal-dialog-big {
     max-width: 90%;
 }
 
@@ -27,6 +27,19 @@
 .airport-info p {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+#add-airport-btn {
+    display: none;
+}
+
+#modal-footer {
+    display: none;
+}
+
+.airport-info hr {
+    color: white;
+    border-top: 1px solid #ffffff66;
 }
 
 @media screen and (max-width: 850px) {

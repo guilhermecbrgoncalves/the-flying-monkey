@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="width: 50%">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">add new airport</h5>
@@ -12,7 +12,7 @@
                 @component('components.airports.add.search')
                 @endcomponent
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" id="modal-footer">
                 @component('components.airports.add.results')
                 @endcomponent
             </div>

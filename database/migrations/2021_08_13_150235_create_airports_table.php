@@ -17,8 +17,12 @@ class CreateAirportsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('user_id')->constrained();
-            $table->integer('latitude');
-            $table->integer('longitude');
+            $table->string('name');
+            $table->string('code');
+            $table->string('city');
+            $table->string('country');
+            $table->string('latitude');
+            $table->string('longitude');
         });
     }
 

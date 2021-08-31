@@ -2,7 +2,7 @@
 <!-- Modal -->
 <div class="modal fade" id="updateModal_{{$logbook->id}}" tabindex="-1" aria-labelledby="updateModal_{{$logbook->id}}"
     aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-big">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="updateModal_{{$logbook->id}}">edit</h5>

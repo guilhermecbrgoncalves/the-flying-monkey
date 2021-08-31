@@ -37,7 +37,20 @@ class AirportController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $inputs = $this->validate($request, [
+            'name' => 'required',
+            'code' => 'required',
+            'city' => 'required',
+            'country' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
+        ]);
+        auth()->user()->airport()->create($inputs);
+
+        $user = auth()->user();
+        session()->flash('airport-created-message', 'new airport added!');
+        $airports = $user->airport()->simplePaginate(5);
+        return view('pages.dashboard.airports.index', ['airports' => $airports]);
     }
 
     /**
@@ -82,6 +95,8 @@ class AirportController extends Controller
      */
     public function destroy(Airport $airport)
     {
-        //
+        $airport->delete();
+        session()->flash('airport-deleted-message', 'my airport deleted');
+        return back();
     }
 }

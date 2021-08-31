@@ -60,7 +60,6 @@ class LogbookController extends Controller
         session()->flash('logbook-created-message', 'new Logbook entry created!');
         $logbooks = $user->logbook()->orderBy('date', 'DESC')->simplePaginate(5);
         return view('pages.dashboard.logbook.index', ['logbooks' => $logbooks]);
-
     }
 
     /**
