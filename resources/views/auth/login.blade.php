@@ -2,14 +2,13 @@
 
 @section('content')
 <div class="container">
+    <h1 class="page-title">login</h1>
     <div class="row justify-content-center">
         @component('components.users.sessions')
         @endcomponent
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
+            <div class="container bg-light border-radius shadow">
+                <div class="card-body p-5">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
