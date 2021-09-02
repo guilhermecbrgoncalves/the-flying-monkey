@@ -6,7 +6,7 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto ml-auto">
-      <li class="nav-item">
+      <li class="nav-item ml-5 pl-4">
         <a class="nav-link" href="{{route('my-airports')}}">my airports</a>
       </li>
       <li class="nav-item">

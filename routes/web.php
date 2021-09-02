@@ -35,6 +35,7 @@ Route::middleware('auth')->group(function () {
     Route::prefix('airports')->group(function () {
         Route::get('', 'AirportController@index')->name('my-airports');
         Route::post('', 'AirportController@store')->name('my-airports-store');
+        Route::get('{airport}', 'AirportController@show')->name('my-airport-show');
         Route::put('{airport}', 'AirportController@update')->name('my-airports-update');
         Route::delete('{airport}', 'AirportController@destroy')->name('my-airports-delete');
     });

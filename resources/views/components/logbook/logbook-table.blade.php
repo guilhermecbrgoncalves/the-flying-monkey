@@ -22,11 +22,11 @@
             <tr>
                 <th scope="row">{{$logbook->date}}</th>
                 <td>{{$logbook->aircraft}}</td>
-                <td>{{$logbook->departure_time}}</td>
+                <td>{{Carbon\Carbon::parse($logbook->departure_time)->format('H:i')}}</td>
                 <td>{{$logbook->departure_place}}</td>
-                <td>{{$logbook->arrival_time}}</td>
+                <td>{{Carbon\Carbon::parse($logbook->arrival_time)->format('H:i')}}</td>
                 <td>{{$logbook->arrival_place}}</td>
-                <td>{{$logbook->total_flight_time}}</td>
+                <td>{{Carbon\Carbon::parse($logbook->total_flight_time)->format('H:i')}}</td>
                 <td>{{$logbook->take_offs}}</td>
                 <td>{{$logbook->landings}}</td>
                 <td>{{$logbook->type_of_flight}}</td>

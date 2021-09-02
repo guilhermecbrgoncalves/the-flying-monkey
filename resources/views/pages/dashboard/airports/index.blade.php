@@ -53,7 +53,7 @@
                         </div>
                         <br>
                         <div class="text-right">
-                            <button class="btn btn-primary" hidden>see more</button>
+                            <a class="btn btn-primary" href="{{route('my-airport-show', $airport->id)}}" hidden>see more</a>
                         </div>
                     </div>
                 </div>
@@ -112,8 +112,6 @@ function icon(weatherMain, weatherIcon) {
 }
 
     @foreach ($airports as $airport)
-
-    
 
     apiWeather = proxy + "api.openweathermap.org/data/2.5/weather?lat={{$airport->latitude}}&lon={{$airport->longitude}}&units=metric&appid=27d1c916bc6f9ef132fd63f304489b6f";
     fetch(apiWeather)

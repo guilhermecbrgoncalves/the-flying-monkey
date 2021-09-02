@@ -34,7 +34,7 @@
             <div class="col-xl-3 col-md-3 col-sm-6 col-6">
                 <div class="form-group">
                     <label for="departure_time">departure time</label>
-                    <input type="time" id="departure_time" name="departure_time" class="form-control
+                    <input type="time" id="departure_time" onfocusout="timeValidation()" name="departure_time" class="form-control
                     @error('departure_time') is-invalid @enderror" value="{{ old('departure_time') }}" required
                         aria-describedby="departure-time-help">
                     @error('departure_time')
@@ -61,7 +61,7 @@
             <div class="col-xl-3 col-md-3 col-sm-6 col-6">
                 <div class="form-group">
                     <label for="arrival_time">arrival time</label>
-                    <input type="time" onkeyup="timeValidation(), flightTime()" id="arrival_time" name="arrival_time" class="form-control
+                    <input type="time" min="" onfocusout="timeValidation()" id="arrival_time" name="arrival_time" class="form-control
                     @error('arrival_time') is-invalid @enderror" value="{{ old('arrival_time') }}" required
                         aria-describedby="arrival-time-help">
                     @error('arrival_time')
@@ -99,17 +99,6 @@
                     </span>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <label for="total_flight_time">flight time</label>
-                    <input type="time" id="total_flight_time" name="total_flight_time" class="form-control
-                    @error('total_flight_time') is-invalid @enderror" value="{{ old('total_flight_time') }}" required
-                        aria-describedby="total_flight_time-help">
-                    @error('total_flight_time')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
             </div>
             <div class="col-xl-3 col-md-3 col-sm-6 col-6">
                 <div class="form-group">
@@ -140,7 +129,7 @@
                     <label for="notes">notes</label>
                     <textarea rows="4" type="text" id="notes" name="notes" autocomplete="notes"
                         placeholder="type some notes" class="form-control
-                    @error('notes') is-invalid @enderror" value="{{ old('notes') }}" required
+                    @error('notes') is-invalid @enderror" value="{{ old('notes') }}"
                         aria-describedby="notes-help"></textarea>
                     @error('notes')
                     <span class="invalid-feedback" role="alert">

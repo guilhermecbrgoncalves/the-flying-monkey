@@ -23,7 +23,7 @@ class CreateLogbooksTable extends Migration
             $table->string('departure_place', 5);
             $table->time('arrival_time');
             $table->string('arrival_place', 5);
-            $table->time('total_flight_time')->nullable();;
+            $table->time('total_flight_time');
             $table->integer('take_offs');
             $table->integer('landings');
             $table->string('type_of_flight', 3);

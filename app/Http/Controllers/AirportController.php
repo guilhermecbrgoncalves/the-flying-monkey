@@ -61,7 +61,7 @@ class AirportController extends Controller
      */
     public function show(Airport $airport)
     {
-        //
+        return view('pages.dashboard.airports.show', ['airport' => $airport]);
     }
 
     /**

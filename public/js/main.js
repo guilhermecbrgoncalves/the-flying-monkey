@@ -1,11 +1,11 @@
 //PASSWORD VALIDATIONS
-function timeValidation() {
-    let departureTime = document.querySelector("#departure_time").value;
-    let arrivalTime = document.querySelector("#arrival_time").value;
 
-    if (arrivalTime < departureTime) {
-        console.log('its invalid')
-    } else {
-        console.log('is valid')
-    }
+console.log('hi');
+function timeValidation() {
+    let departureTime = document.getElementById("departure_time");
+    let arrivalTime = document.getElementById("arrival_time");
+
+    console.log(departureTime.value);
+    console.log(arrivalTime.value);
+    
 }

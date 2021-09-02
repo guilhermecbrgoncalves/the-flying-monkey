@@ -45,18 +45,6 @@
                     </span>
                     @enderror
                 </div>
-                <div class="form-group">
-                    <label for="total_flight_time">flight time</label>
-                    <input type="time" id="departure_time" value="{{$logbook->total_flight_time}}"
-                        name="total_flight_time" class="form-control
-                    @error('departure_time') is-invalid @enderror" value="{{ old('departure_time') }}" required
-                        aria-describedby="departure-time-help">
-                    @error('departure_time')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
-                </div>
             </div>
             <div class="col-xl-3 col-md-3 col-sm-6 col-6">
                 <div class="form-group">
