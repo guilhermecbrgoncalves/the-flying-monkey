@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/home', 'AirportController@index')->name('home');
+    Route::get('/dashboard', 'HomeController@index')->name('home');
     Route::get('/my-airports', 'AirportController@index')->name('my-airports');
 
     Route::prefix('logbook')->group(function () {
@@ -38,6 +38,10 @@ Route::middleware('auth')->group(function () {
         Route::get('{airport}', 'AirportController@show')->name('my-airport-show');
         Route::put('{airport}', 'AirportController@update')->name('my-airports-update');
         Route::delete('{airport}', 'AirportController@destroy')->name('my-airports-delete');
+    });
+
+    Route::prefix('world-map')->group(function () {
+        Route::get('', 'WorldMapController@index')->name('world-map');
     });
 
     Route::prefix('users')->group(function () {

@@ -45,12 +45,22 @@ class AirportController extends Controller
             'latitude' => 'required',
             'longitude' => 'required',
         ]);
-        auth()->user()->airport()->create($inputs);
 
-        $user = auth()->user();
-        session()->flash('airport-created-message', 'new airport added!');
-        $airports = $user->airport()->simplePaginate(5);
-        return view('pages.dashboard.airports.index', ['airports' => $airports]);
+        if (Airport::where('name', $request->name)->count() > 0) {
+            session()->flash('airport-duplicate-message', 'The Airport is already on the list!');
+            return back();
+        };
+
+        try {
+            if ($this->validate && $this->validate->fails()) {
+                return back()->withErrors($this->validate);
+            }
+        } catch (\Exception $e) {
+
+        }
+        auth()->user()->airport()->create($inputs);
+        session()->flash('airport-created-message', 'New airport added!');
+        return back();
     }
 
     /**
@@ -61,7 +71,8 @@ class AirportController extends Controller
      */
     public function show(Airport $airport)
     {
-        return view('pages.dashboard.airports.show', ['airport' => $airport]);
+        $windyKey = 'XLhc3zJ9zFUyFWTwUKnh990aIW5LWz4Y';
+        return view('pages.dashboard.airports.show', ['airport' => $airport, 'windyKey' => $windyKey]);
     }
 
     /**
@@ -96,7 +107,7 @@ class AirportController extends Controller
     public function destroy(Airport $airport)
     {
         $airport->delete();
-        session()->flash('airport-deleted-message', 'my airport deleted');
+        session()->flash('airport-deleted-message', 'Airport deleted successfully');
         return back();
     }
 }

@@ -10,6 +10,6 @@
         <input type="text" id="country" name="country" hidden>
         <input type="text" id="latitude" name="latitude" hidden>
         <input type="text" id="longitude" name="longitude" hidden>
-        <button class="btn btn-primary mt-4 mx-auto" id="add-airport-btn" type="submit">add to my airports</button>
+        <button class="btn btn-primary mt-4 mx-auto" id="add-airport-btn" type="submit">Add to my airports</button>
     </form>
 </div>

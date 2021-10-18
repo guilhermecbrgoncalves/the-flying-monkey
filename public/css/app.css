@@ -30,6 +30,7 @@
   --light: #f8f9fa;
   --dark: #343a40;
   --bg-monkey: blanchedalmond;
+  --bg-flyware: #232326;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -73,7 +74,7 @@ body {
   line-height: 1.6;
   color: #212529;
   text-align: left;
-  background-color: var(--bg-monkey);
+  background-color: whitesmoke;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -7072,6 +7073,10 @@ button.bg-danger:focus {
 
 .bg-monkey {
   background-color: var(--bg-monkey);
+}
+
+.bg-flyware {
+    background-color: var(--bg-flyware);
 }
 
 a.bg-light:hover,

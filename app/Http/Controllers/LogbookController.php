@@ -52,19 +52,26 @@ class LogbookController extends Controller
             'take_offs' => 'required',
             'landings' => 'required',
             'type_of_flight' => 'required',
-            'notes' => '',
+            'notes' => ''
         ]);
+
+        try {
+            if ($this->validate && $this->validate->fails()) {
+                return back()->withErrors($this->validate);
+            } 
+        } catch (\Exception $e) {
+
+        }
 
         $startTime = $request->departure_time;
         $finishTime   = $request->arrival_time;
 
         $start  = new Carbon($startTime);
-        $end    = new Carbon($finishTime );
-        
+        $end    = new Carbon($finishTime);
+
         $totalFlightTime = $start->diff($end)->format('%H:%I:%S');
 
         $logbook = new Logbook();
-
         $logbook->user_id = auth()->user()->id;
         $logbook->date = $request->date;
         $logbook->aircraft = $request->aircraft;
@@ -81,6 +88,7 @@ class LogbookController extends Controller
         $logbook->save();
 
         session()->flash('logbook-created-message', 'new Logbook entry created!');
+    
         return back();
     }
 
@@ -115,6 +123,26 @@ class LogbookController extends Controller
      */
     public function update(Request $request, Logbook $logbook)
     {
+        $inputs = $this->validate($request, [
+            'date' => 'required',
+            'aircraft' => 'required|max:50',
+            'departure_time' => 'required',
+            'departure_place' => 'required|max:5',
+            'arrival_time' => 'required',
+            'arrival_place' => 'required|max:5',
+            'take_offs' => 'required',
+            'landings' => 'required',
+            'type_of_flight' => 'required',
+            'notes' => ''
+        ]);
+
+        try {
+            if ($this->validate && $this->validate->fails()) {
+                return back()->withErrors($this->validate);
+            } 
+        } catch (\Exception $e) {
+
+        }
 
         $start  = new Carbon($request->departure_time);
         $end    = new Carbon($request->arrival_time);

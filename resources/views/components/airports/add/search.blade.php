@@ -1,15 +1,18 @@
 <div class="container text-center">
     <div class="form-group">
-        <label for="arrival_place">search airport by ICAO or IATA code</label>
+        <label for="arrival_place">Search Airport by ICAO or IATA Code</label>
         <div class="container mt-3">
-            <div class="row">
-                <div class="col-8 text-right">
-                    <input type="text" id="airport-input" name="airport-input" placeholder="type the airport code" class="form-control">
+            <div class="row mb-4">
+                <div class="col-8">
+                    <input type="text" id="airport-input" name="airport-input" width="80%"
+                        placeholder="Please type the airport code" class="form-control">
                 </div>
-                <div class="col text-left">
-                    <button class="btn btn-primary" onclick="searchAirport()">search</button>
+                <div class="col">
+                    <button class="btn btn-primary" onclick="searchAirport()">Search</button>
                 </div>
             </div>
+            <p>Not sure about the code? <a href="{{route('world-map')}}">Click here to check the world map!</a></p>
         </div>
+        <div class="alert alert-danger" id="airport-not-found" style="display: none">Airport Code not recognized</div>
     </div>
 </div>

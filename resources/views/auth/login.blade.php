@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h1 class="page-title text-center">login</h1>
+    <h1 class="page-title text-center">Login</h1>
     <div class="row justify-content-center">
         @component('components.users.sessions')
         @endcomponent

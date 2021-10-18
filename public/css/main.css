@@ -1,6 +1,41 @@
+:root {
+    --flyware: #232326;
+    --sub-bg: #e6e6e6;
+  }
+
+  #map {
+    height: 500px;
+    width: 100%;
+  }
+
+  .navbar {
+      max-height: 50px;
+  }
+
+  .sub-bg {
+      background-color: var(--sub-bg);;
+  }
+
 .page-title {
-    font-weight: bold;
-    color: #736A5C;
+    font-weight: 700;
+    font-family: 'Montserrat',sans-serif;
+    color: var(--flyware);
+    font-size: 52px;
+}
+
+.card-title {
+    font-weight: 500;
+    font-family: 'Montserrat',sans-serif;
+    color: var(--flyware);
+}
+
+.card-header:first-child {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.card {
+    border-radius: 20px;
 }
 
 .modal-dialog-big {
@@ -42,9 +77,62 @@
     border-top: 1px solid #ffffff66;
 }
 
+#windy {
+    width: 100%;
+    height: 500px;
+}
+
+#windy #bottom,
+#windy #embed-zoom {
+    display: none !important;
+}
+
+#windy #logo-wrapper {
+    top: initial;
+    bottom: 65px;
+}
+
+#windy #logo-wrapper #logo {
+    left: 80px;
+}
+
+.metar-table td {
+    text-align: right;
+}
+
+.metar-table th {
+    font-weight: 400;
+}
+
+.table-decoded span {
+    color: white;
+}
+
+.table-decoded tr {
+    color: rgba(245, 245, 245, 0.815);
+}
+
+.airport-info h1 {
+    color: rgba(245, 245, 245, 0.815);
+}
+
+.airport-info span {
+    color: white;
+}
+
+.station-observed {
+    position: absolute;
+    bottom: 10px;
+}
+
+
 @media screen and (max-width: 850px) {
     .img-profile {
         width: 250px;
         height: 250px;
+    }
+
+    .navbar {
+        max-height: unset;
     }
 }
