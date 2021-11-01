@@ -27,7 +27,7 @@
         <nav class="navbar navbar-expand-md navbar-light border-bottom">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    flyware.
+                    flyware
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
